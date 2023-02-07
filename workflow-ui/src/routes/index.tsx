@@ -142,40 +142,7 @@ export default function Router() {
             { path: 'new', element: <DemoCreatePage /> },
           ],
         },
-        {
-          path: 'hr',
-          children: [
-            // Status
-            // { element: <Navigate to="/dashboard/hr/status" replace />, index: true },
-            // { path: 'status', element: <HRStatusList /> },
-            // { path: 'statusnew', element: <HRStatusCreate /> },
-            // { path: ':id/statusedit', element: <HRStatusCreate /> },
 
-            // Project
-            { element: <Navigate to="/dashboard/hr/project" replace />, index: true },
-            { path: 'project', element: <HRProjectList /> },
-            { path: 'projectnew', element: <HRProjectCreate /> },
-            { path: ':id/projectedit', element: <HRProjectCreate /> },
-
-            // Task
-            { element: <Navigate to="/dashboard/hr/task" replace />, index: true },
-            { path: 'task', element: <HRTaskList /> },
-            { path: 'tasknew', element: <HRTaskCreate /> },
-            { path: ':id/taskedit', element: <HRTaskCreate /> },
-
-            // Subtask
-            { element: <Navigate to="/dashboard/hr/subtask" replace />, index: true },
-            { path: 'subtask', element: <HRSubtaskList /> },
-            { path: 'subtasknew', element: <HRSubtaskCreate /> },
-            { path: ':id/subtaskedit', element: <HRSubtaskCreate /> },
-
-            //  TimesheetAttendance
-            { element: <Navigate to="/dashboard/hr/timesheetattendance" replace />, index: true },
-            { path: 'timesheetattendance/:weekStartDate', element: <HRTimesheetAttendanceList /> },
-            { path: 'timesheetattendancenew/:weekStartDate', element: <HRTimesheetAttendanceCreate /> },
-            { path: ':id/timesheetattendanceedit', element: <HRTimesheetAttendanceCreate /> },
-          ],
-        },
         {
           path: 'invoice',
           children: [
@@ -200,23 +167,3 @@ export default function Router() {
 // Role
 const RoleList = Loadable(lazy(() => import('../pages/role/RoleList')));
 const RoleCreate = Loadable(lazy(() => import('../pages/role/RoleCreate')));
-
-// Project
-const HRProjectList = Loadable(lazy(() => import('../pages/hr/project/ProjectList')));
-const HRProjectCreate = Loadable(lazy(() => import('../pages/hr/project/ProjectCreate')));
-
-// Task
-const HRTaskList = Loadable(lazy(() => import('../pages/hr/task/TaskList')));
-const HRTaskCreate = Loadable(lazy(() => import('../pages/hr/task/TaskCreate')));
-
-// Subtask
-const HRSubtaskList = Loadable(lazy(() => import('../pages/hr/subtask/SubtaskList')));
-const HRSubtaskCreate = Loadable(lazy(() => import('../pages/hr/subtask/SubtaskCreate')));
-
-// TimesheetAttendanceState
-const HRTimesheetAttendanceList = Loadable(
-  lazy(() => import('../pages/hr/timesheetattendance/TimesheetAttendanceList'))
-);
-const HRTimesheetAttendanceCreate = Loadable(
-  lazy(() => import('../pages/hr/timesheetattendance/TimesheetAttendanceCreate'))
-);

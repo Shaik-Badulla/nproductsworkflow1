@@ -52,26 +52,7 @@ export const PATH_DASHBOARD = {
     new: path(ROOTS_DASHBOARD, '/demo/new'),
     edit: (id: string) => path(ROOTS_DASHBOARD, `/demo/${id}/edit`),
   },
-  hr: {
-    root: path(ROOTS_DASHBOARD, '/hr'),
 
-    projectedit: (id: string) => path(ROOTS_DASHBOARD, `/hr/${id}/projectedit`),
-    project: path(ROOTS_DASHBOARD, '/hr/project'),
-    projectnew: path(ROOTS_DASHBOARD, '/hr/projectnew'),
-
-    taskedit: (id: string) => path(ROOTS_DASHBOARD, `/hr/${id}/taskedit`),
-    task: path(ROOTS_DASHBOARD, '/hr/task'),
-    tasknew: path(ROOTS_DASHBOARD, '/hr/tasknew'),
-
-    subtaskedit: (id: string) => path(ROOTS_DASHBOARD, `/hr/${id}/subtaskedit`),
-    subtask: path(ROOTS_DASHBOARD, '/hr/subtask'),
-    subtasknew: path(ROOTS_DASHBOARD, '/hr/subtasknew'),
-
-    timesheetattendanceedit: (id: string) =>
-      path(ROOTS_DASHBOARD, `/hr/${id}/timesheetattendanceedit`),
-    timesheetattendance: (weekStartDate: string) => path(ROOTS_DASHBOARD, `/hr/timesheetattendance/${weekStartDate}`),
-    timesheetattendancenew: (weekStartDate: string) => path(ROOTS_DASHBOARD, `/hr/timesheetattendancenew/${weekStartDate}`),
-  },
   invoice: {
     root: path(ROOTS_DASHBOARD, '/invoice'),
     list: path(ROOTS_DASHBOARD, '/invoice/list'),

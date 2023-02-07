@@ -5,6 +5,7 @@ import {
   useSelector as useAppSelector,
 } from 'react-redux';
 import { persistStore, persistReducer } from 'redux-persist';
+// eslint-disable-next-line import/no-cycle
 import rootReducer, { rootPersistConfig } from './rootReducer';
 
 // ----------------------------------------------------------------------

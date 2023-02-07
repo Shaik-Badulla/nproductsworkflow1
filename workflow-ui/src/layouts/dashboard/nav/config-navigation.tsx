@@ -16,7 +16,7 @@ const ICONS = {
   dashboard: icon('ic_dashboard'),
 };
 
-const addingZero = (val: number) => val < 10 ? `0${val}` : val;
+const addingZero = (val: number) => (val < 10 ? `0${val}` : val);
 const today = new Date();
 const formatDate = `${today.getFullYear()}-${addingZero(today.getMonth() + 1)}-${today.getDate()}`;
 
@@ -51,21 +51,6 @@ const navConfig = [
   },
 
   {
-    subheader: 'CRM',
-    items: [
-      {
-        title: 'customer',
-        path: PATH_DASHBOARD.customer.root,
-        icon: ICONS.user,
-        children: [
-          { title: 'list', path: PATH_DASHBOARD.customer.list },
-          { title: 'create', path: PATH_DASHBOARD.customer.new, roles: ['ROLE_SUPER_ADMIN'] },
-        ],
-      },
-    ],
-  },
-
-  {
     subheader: 'Demo',
     items: [
       {
@@ -94,25 +79,6 @@ const navConfig = [
           { title: 'details', path: PATH_DASHBOARD.invoice.demoView },
           { title: 'create', path: PATH_DASHBOARD.invoice.new },
           { title: 'edit', path: PATH_DASHBOARD.invoice.demoEdit },
-        ],
-      },
-    ],
-  },
-
-  // HR
-  // ----------------------------------------------------------------------
-  {
-    subheader: 'Timesheet',
-    items: [
-      {
-        title: 'Timesheet Details',
-        path: PATH_DASHBOARD.hr.root,
-        icon: ICONS.user,
-        children: [
-          { title: 'projects', path: PATH_DASHBOARD.hr.project },
-          { title: 'tasks', path: PATH_DASHBOARD.hr.task },
-          { title: 'subtasks', path: PATH_DASHBOARD.hr.subtask },
-          { title: 'attendance', path: PATH_DASHBOARD.hr.timesheetattendance(formatDate) },
         ],
       },
     ],
