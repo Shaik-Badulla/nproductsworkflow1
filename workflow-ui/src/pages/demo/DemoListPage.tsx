@@ -45,19 +45,31 @@ import {
 } from '../../components/table';
 // sections
 import { UserTableToolbar, UserTableRow } from '../../sections/@dashboard/user/list';
+import Input from 'src/theme/overrides/Input';
 
 // ----------------------------------------------------------------------
 
-const STATUS_OPTIONS = ['all', 'LINKEDIN', 'facebook'];
+// const STATUS_OPTIONS = ['all', 'LINKEDIN', 'facebook'];
 
-const TYPE_OPTIONS = ['all', 'LINKEDIN', 'facebook'];
+// const TYPE_OPTIONS = ['all', 'LINKEDIN', 'facebook'];
 
 const TABLE_HEAD = [
-  { id: 'name', label: 'Name', align: 'left' },
-  { id: 'email', label: 'Email', align: 'left' },
-  { id: 'joinDate', label: 'Join Date', align: 'left' },
-  { id: 'type', label: 'Type', align: 'left' },
+  { id: 'id', label: 'PharmacyPurchaseNo', align: 'left' },
+  { id: 'medicineCategory', label: 'medicineCategory', align: 'left' },
+  { id: 'medicineName', label: 'medicineName', align: 'left' },
+  { id: 'batchNo', label: 'batchNo', align: 'left' },
+  { id: 'mrp', label: 'mrp', align: 'left' },
+  { id: 'batchAmount', label: 'batchAmount', align: 'left' },
+  { id: 'salePrice', label: 'salePrice', align: 'left' },
+  { id: 'packingQuantity', label: 'packingQuantity', align: 'left' },
+  { id: 'quantity', label: 'quantity', align: 'left' },
+  { id: 'purchasePrice', label: 'Discount', align: 'left' },
+  { id: 'tax', label: 'tax', align: 'left' },
+  { id: 'amount', label: 'NetAmount', align: 'left' },
+  // { id: 'createdDateTime', label: 'createdDateTime', align: 'left' },
   { id: 'actions', label: 'Actions', align: 'left' },
+  // { id: 'expiryDate', label: 'expiryDate', align: 'left' },
+  { id: '' },
 ];
 
 // ----------------------------------------------------------------------
@@ -183,31 +195,47 @@ export default function DemoListPage() {
   return (
     <>
       <Helmet>
-        <title> CRM: List</title>
+        <title> CRM: Medicine List</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="CRM List"
+          heading="Medicine Purchase List"
           links={[
             { name: 'Dashboard', href: PATH_DASHBOARD.root },
-            { name: 'CRM', href: PATH_DASHBOARD.demo.root },
-            { name: 'List' },
+            { name: 'Medicines', href: PATH_DASHBOARD.demo.root },
+            { name: 'Purchase' },
           ]}
-          action={
+          />
+           
+           <Button
+              variant="contained"
+              sx={{ml:90,mb:2}}
+              component="label"
+              startIcon={<Iconify icon="eva:plus-fill" />}
+              >
+              <input
+                hidden
+                type='file'
+                id='csvFileInput'
+                accept='.csv'
+                // onChange={handleOnChange}
+                />     
+              Export
+            </Button>
+
             <Button
               component={RouterLink}
               to={PATH_DASHBOARD.demo.new}
               variant="contained"
+              sx={{ml:9,mb:2}}
               startIcon={<Iconify icon="eva:plus-fill" />}
             >
-              New CRM
-            </Button>
-          }
-        />
+              Purchase Medicine
+            </Button>  
 
         <Card>
-          <Tabs
+          {/* <Tabs
             value={filterStatus}
             onChange={handleFilterStatus}
             sx={{
@@ -215,14 +243,14 @@ export default function DemoListPage() {
               bgcolor: 'background.neutral',
             }}
           >
-            {STATUS_OPTIONS.map((tab) => (
+            {/* {STATUS_OPTIONS.map((tab) => (
               <Tab key={tab} label={tab} value={tab} />
-            ))}
-          </Tabs>
+            ))} */}
+          {/* </Tabs> */} 
 
-          <Divider />
+          {/* <Divider /> */}
 
-          <DemoTableToolbar
+          {/* <DemoTableToolbar
             isFiltered={isFiltered}
             filterName={filterName}
             filterRole={filterType}
@@ -230,7 +258,7 @@ export default function DemoListPage() {
             onFilterName={handleFilterName}
             onFilterRole={handleFilterRole}
             onResetFilter={handleResetFilter}
-          />
+          /> */}
 
           <TableContainer sx={{ position: 'relative', overflow: 'unset' }}>
             <TableSelectedAction
@@ -253,7 +281,7 @@ export default function DemoListPage() {
             />
 
             <Scrollbar>
-              <Table size={dense ? 'small' : 'medium'} sx={{ minWidth: 800 }}>
+              <Table size={dense ? 'small' : 'medium'} sx={{ minWidth: 1500 }}>
                 <TableHeadCustom
                   order={order}
                   orderBy={orderBy}
@@ -358,18 +386,18 @@ function applyFilter({
 
   inputData = stabilizedThis.map((el) => el[0]);
 
-  if (filterName) {
-    inputData = inputData.filter(
-      (demo) => demo.firstName.toLowerCase().indexOf(filterName.toLowerCase()) !== -1
-    );
-  }
-  if (filterStatus !== 'all') {
-    inputData = inputData.filter((demo) => demo.type === filterStatus);
-  }
+  // if (filterName) {
+  //   inputData = inputData.filter(
+  //     (demo) => demo.firstName.toLowerCase().indexOf(filterName.toLowerCase()) !== -1
+  //   );
+  // }
+  // if (filterStatus !== 'all') {
+  //   inputData = inputData.filter((demo) => demo.type === filterStatus);
+  // }
 
-  if (filterType !== 'all') {
-    inputData = inputData.filter((demo) => demo.type === filterType);
-  }
+  // if (filterType !== 'all') {
+  //   inputData = inputData.filter((demo) => demo.type === filterType);
+  // }
 
   return inputData;
 }

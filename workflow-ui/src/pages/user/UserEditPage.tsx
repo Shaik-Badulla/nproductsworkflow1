@@ -44,7 +44,7 @@ export default function UserEditPage() {
               name: 'User',
               href: PATH_DASHBOARD.user.list,
             },
-            { name: currentUser?.firstName },
+            { name: currentUser?.userName },
           ]}
         />
 

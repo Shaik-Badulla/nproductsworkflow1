@@ -1,0 +1,31 @@
+header {
+  background-color: #333;
+   color: #fff;
+    display: flex;
+     justify-content: center;
+      padding: 20px;
+  align-items: center;
+ }
+  h1 {
+     margin: 0;
+    }
+    nav ul {
+       display: flex;
+        list-style: none;
+         margin:0;
+    justify-content:
+    }
+     center{
+      margin-left:50rem;
+       align-items:
+        
+      } 
+        nav a {
+          color: #fff;
+       text-decoration: none;
+      padding: 10px 20px;
+     }   
+      .header-icon {
+         font-size: 1.5em;
+   cursor: 
+   

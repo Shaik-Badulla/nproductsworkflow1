@@ -19,18 +19,33 @@ export default function UserCreatePage() {
       <Helmet>
         <title> User: Create a new user | Minimal UI</title>
       </Helmet>
-
-      <Container maxWidth={themeStretch ? false : 'lg'}>
-        <CustomBreadcrumbs
-          heading="Create a new user"
+      {/* <CustomBreadcrumbs
+          heading="Login & Register"
           links={[
             {
-              name: 'Dashboard',
+              name: 'Home',
               href: PATH_DASHBOARD.root,
             },
             {
-              name: 'User',
+              name: 'Login',
               href: PATH_DASHBOARD.user.list,
+              
+            },
+            { name: 'New user' },
+          ]}
+        /> */}
+      <Container maxWidth={themeStretch ? false : 'lg'}>
+        <CustomBreadcrumbs
+          heading="Login & Register"
+          links={[
+            {
+              name: 'Home',
+              href: PATH_DASHBOARD.root,
+            },
+            {
+              name: 'Login',
+              href: PATH_DASHBOARD.user.list,
+              
             },
             { name: 'New user' },
           ]}

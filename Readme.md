@@ -13,3 +13,6 @@ docker compose up -d //run at git sh
 
 
 spring.cloud.config.server.native.searchLocations: classpath:/config-repo
+"# nproductsworkflow1" 
+"# nproductsworkflow1" 
+"# nproductsworkflow1" 

@@ -41,18 +41,18 @@ export default function UserNewEditForm({ isEdit = false, currentUser }: Props) 
   const [dropdownRole, setDropdownRole] = useState(currentUser?.roleId?.id || '');
 
   const NewUserSchema = Yup.object().shape({
-    firstName: Yup.string().required('Name is required'),
-    lastname: Yup.string().required('Name is required'),
-    email: Yup.string().required('Email is required').email('Email must be a valid email address'),
-    role: Yup.string().required('Role is required'),
+    userName: Yup.string().required('Name is required'),
+    password: Yup.string().required('Password is required'),
+    // email: Yup.string().required('Email is required').email('Email must be a valid email address'),
+    // role: Yup.string().required('Role is reed'),
   });
 
   const defaultValues = useMemo(
     () => ({
-      firstName: currentUser?.firstName || '',
-      lastName: currentUser?.lastName || '',
-      email: currentUser?.email || '',
-      role: currentUser?.role || '',
+      userName: currentUser?.userName || '',
+      password: currentUser?.yourPassword || '',
+      // email: currentUser?.email || '',
+      // role: currentUser?.role || '',
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [currentUser]
@@ -90,10 +90,10 @@ export default function UserNewEditForm({ isEdit = false, currentUser }: Props) 
     console.log('in submit');
     const request: IUser = {
       id: data.id,
-      firstName: data.firstName,
-      lastName: data.lastName,
-      email: data.email,
-      role: data.role,
+      userName: data.userName,
+      yourPassword: data.yourPassword,
+      // email: data.email,
+      // role: data.role,
     };
 
     try {
@@ -122,19 +122,24 @@ export default function UserNewEditForm({ isEdit = false, currentUser }: Props) 
         <Grid item xs={12} md={8}>
           <Card sx={{ p: 3 }}>
             <Box
+            // <h1>
+            // /h1>
+
               rowGap={3}
               columnGap={2}
-              display="grid"
+              display="column"
               gridTemplateColumns={{
-                xs: 'repeat(1, 1fr)',
-                sm: 'repeat(2, 1fr)',
+                xs: 'repeat(3, 1fr)',
+                sm: 'repeat(5, 1fr)',
               }}
             >
-              <RHFTextField name="firstName" label="First Name" />
-              <RHFTextField name="lastName" label="Last Name" />
-              <RHFTextField name="email" label="Email Address" />
+              <RHFTextField name="username" label="User Name" />
+              <RHFTextField name="yourPassword" label="Your Password" />
+              <RHFTextField name="" label="Forgot your password?" />
+              <RHFTextField name="" label="Keep me logged in?" />
+              {/* <RHFTextField name="email" label="Email Address" /> */}
 
-              <RHFSelect
+              {/* <RHFSelect
                 name={dropdownRole}
                 value={dropdownRole}
                 label="Role"
@@ -147,13 +152,41 @@ export default function UserNewEditForm({ isEdit = false, currentUser }: Props) 
                     {option.name}
                   </option>
                 ))}
-              </RHFSelect>
+              </RHFSelect> */}
             </Box>
 
-            <Stack alignItems="flex-end" sx={{ mt: 3 }}>
+            <Stack alignItems="flex-end" sx={{ mt: 2 }}>
               <LoadingButton type="submit" variant="contained" loading={isSubmitting}>
-                {!isEdit ? 'Create User' : 'Save Changes'}
+                {!isEdit ? 'Login' : 'Save Changes'}
               </LoadingButton>
+            
+
+            
+            <Card sx={{ p: 7 }}>
+              <Box
+              
+              alignItems="flex"
+              rowGap={3}
+              columnGap={5}
+              display="column"
+              gridTemplateColumns={{
+                xs: 'repeat(3, 1fr)',
+                sm: 'repeat(5, 1fr)',
+              }}
+            >
+              <RHFTextField name="username" label="your Name" />
+              <RHFTextField name="yourPassword" label="phone number" />
+              <RHFTextField name="" label="password" />
+              {/* <RHFTextField name="" label="Keep me logged in?" /> */}
+              
+              </Box>
+
+              <LoadingButton type="submit" variant="contained" loading={isSubmitting}>
+                {!isEdit ? 'Register' : 'Save Changes'}
+              </LoadingButton>
+             
+              </Card>
+              
             </Stack>
           </Card>
         </Grid>

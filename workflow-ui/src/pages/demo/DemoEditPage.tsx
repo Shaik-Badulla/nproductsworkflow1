@@ -30,12 +30,12 @@ export default function DemoEditPage() {
   return (
     <>
       <Helmet>
-        <title> CRM: Edit</title>
+        <title> CRM: Edit Demo</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Edit user"
+          heading="Edit Demo"
           links={[
             {
               name: 'Dashboard',
@@ -45,7 +45,7 @@ export default function DemoEditPage() {
               name: 'User',
               href: PATH_DASHBOARD.demo.list,
             },
-            { name: currentDemo?.id },
+            // { name: currentDemo?.id },
           ]}
         />
 

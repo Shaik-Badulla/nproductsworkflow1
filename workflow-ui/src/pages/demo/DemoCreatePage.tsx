@@ -12,28 +12,28 @@ import UserNewEditForm from '../../sections/@dashboard/user/UserNewEditForm';
 
 // ----------------------------------------------------------------------
 
-export default function DemoCreatePage() {
+export default function MedicieneCreatePage() {
   const { themeStretch } = useSettingsContext();
 
   return (
     <>
       <Helmet>
-        <title> CRM: Create a new user | Minimal UI</title>
+        <title> CRM: Pharmacy | Minimal UI</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Create a new user"
+          heading="Medicine Purchase New"
           links={[
             {
               name: 'Dashboard',
               href: PATH_DASHBOARD.root,
             },
             {
-              name: 'User',
-              href: PATH_DASHBOARD.user.list,
+              name: 'Medicines',
+              href: PATH_DASHBOARD.demo.list,
             },
-            { name: 'New user' },
+            { name: 'Purchase' },
           ]}
         />
         <DemoNewEditForm />

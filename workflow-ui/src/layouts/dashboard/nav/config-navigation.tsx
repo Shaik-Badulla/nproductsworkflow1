@@ -51,15 +51,16 @@ const navConfig = [
   },
 
   {
-    subheader: 'Demo',
+    subheader: 'Health Care',
     items: [
       {
-        title: 'All',
+        title: 'Pharmacy',
         path: PATH_DASHBOARD.demo.root,
         icon: ICONS.user,
         children: [
-          { title: 'list', path: PATH_DASHBOARD.demo.list },
-          { title: 'create', path: PATH_DASHBOARD.demo.new, roles: ['ROLE_SUPER_ADMIN'] },
+          { title: 'Medicines', path: PATH_DASHBOARD.demo.list },
+          // { title: 'create', path: PATH_DASHBOARD.demo.new, roles: ['ROLE_SUPER_ADMIN'] },
+          { title: 'Purchase', path: PATH_DASHBOARD.demo.new },
         ],
       },
     ],
@@ -83,6 +84,24 @@ const navConfig = [
       },
     ],
   },
+
+  {
+    subheader: 'Pharmacy',
+    items: [
+      {
+        title: 'Pharmacy',
+        path: PATH_DASHBOARD.invoice.root,
+        icon: ICONS.user,
+        children: [
+          // { title: 'list', path: PATH_DASHBOARD.invoice.list },
+          // { title: 'details', path: PATH_DASHBOARD.invoice.demoView },
+          { title: 'Purchase', path: PATH_DASHBOARD.user.list },
+          // { title: 'edit', path: PATH_DASHBOARD.invoice.demoEdit },
+        ],
+      },
+    ],
+  },
 ];
+
 
 export default navConfig;

@@ -111,7 +111,7 @@ export function addDemo(demo: DemoRequest) {
   return async (dispatch: Dispatch) => {
     dispatch(slice.actions.startCreating());
     try {
-      const response = await axios.post('/v1/demo/', demo);
+      const response = await axios.post('/demo/', demo);
       dispatch(slice.actions.addDemoSuccess(response.data));
     } catch (error) {
       dispatch(slice.actions.hasError(error));
@@ -122,8 +122,9 @@ export function addDemo(demo: DemoRequest) {
 export function updateDemo(demo: DemoRequest) {
   return async (dispatch: Dispatch) => {
     dispatch(slice.actions.startUpdating());
+    console.log("hello");
     try {
-      const response = await axios.put(`/v1/demo/${demo.id}`, demo);
+      const response = await axios.put(`/demo/${demo.id}`, demo);
       dispatch(slice.actions.updateDemoSuccess(response.data));
     } catch (error) {
       dispatch(slice.actions.hasError(error));

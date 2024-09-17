@@ -48,7 +48,7 @@ export default function InvoiceNewEditAddress() {
   };
 
   return (
-    <Stack
+     <Stack
       spacing={{ xs: 2, md: 5 }}
       direction={{ xs: 'column', md: 'row' }}
       divider={

@@ -39,7 +39,8 @@ export default function DemoTableRow({
   onSelectRow,
   onDeleteRow,
 }: Props) {
-  const { firstName, lastName, email, type, joinDate } = row;
+  // const { firstName, lastName, email, type, joinDate } = row;
+  const {id, medicineCategory, medicineName, batchNo, mrp, batchAmount, salePrice, packingQuantity, quantity, purchasePrice, tax, amount} = row;
 
   const [openConfirm, setOpenConfirm] = useState(false);
 
@@ -68,12 +69,25 @@ export default function DemoTableRow({
           <Checkbox checked={selected} onClick={onSelectRow} />
         </TableCell>
         <TableCell align="left">
-          {capitalCase(firstName)} {capitalCase(lastName)}
+          {id}
         </TableCell>
-        <TableCell align="left">{email}</TableCell>
 
-        <TableCell align="left">{format(new Date(joinDate || ''), 'yyyy-mm-dd')}</TableCell>
-        <TableCell align="left">{capitalCase(type)}</TableCell>
+        <TableCell align="left">{medicineCategory}</TableCell>
+        <TableCell align="left">{medicineName}</TableCell>
+        <TableCell align="left">{batchNo}</TableCell>
+        <TableCell align="left">{mrp}</TableCell>
+        <TableCell align="left">{batchAmount}</TableCell>
+        <TableCell align="left">{salePrice}</TableCell>
+        <TableCell align="left">{packingQuantity}</TableCell>
+        <TableCell align="left">{quantity}</TableCell>
+        <TableCell align="left">{purchasePrice}</TableCell>
+        <TableCell align="left">{tax}</TableCell>
+        <TableCell align="left">{amount}</TableCell>
+        {/* <TableCell align="left">{createdDateTime}</TableCell> */}
+        
+
+        {/* <TableCell align="left">{format(new Date(joinDate || ''), 'yyyy-mm-dd')}</TableCell>
+        <TableCell align="left">{capitalCase(type)}</TableCell> */}
 
         <TableCell align="right">
           <IconButton color={openPopover ? 'inherit' : 'default'} onClick={handleOpenPopover}>
@@ -114,7 +128,7 @@ export default function DemoTableRow({
         open={openConfirm}
         onClose={handleCloseConfirm}
         title="Delete"
-        content="Are you sure want to delete?"
+        content= {<>Are you sure want to delete <strong>{medicineName}</strong>?</>}
         action={
           <Button variant="contained" color="error" onClick={onDeleteRow}>
             Delete

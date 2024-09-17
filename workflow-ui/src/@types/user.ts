@@ -160,9 +160,11 @@ export type IUserAccountNotificationSettings = {
 // nProducts
 export type IUser = {
   id: string;
-  username?: string;
+  // username?: string;
   firstName?: string;
-  lastName?: string;
+  yourPassword?: string;
+  keepmeloggedin?: string
+  ForgotYourPassword?:string
   email?: string;
   role?: string;
   roleId?: Role;

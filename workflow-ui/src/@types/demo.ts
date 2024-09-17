@@ -1,22 +1,37 @@
 export type Demo = {
+  
   id: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  joinDate: Date | string | number;
-  type: string;
-  disabled?: boolean;
-  description?: string;
+  medicineCategory: string;
+  medicineName: string;
+  batchNo: string;
+  expiryDate: string  ;
+  mrp: boolean;
+  batchAmount: boolean;
+  salePrice: boolean;
+  packingQuantity: number;
+  quantity: number;
+  purchasePrice: boolean;
+  tax: boolean;
+  amount: boolean;
+  // createdDateTime: string;
+  
 };
-
 export type DemoRequest = {
+
   id?: string;
-  firstName?: string;
-  lastName?: string;
-  email?: string;
-  joinDate?: string;
-  password?: string;
-  type?: string;
+  medicineCategory?: string;
+  medicineName?: string;
+  batchNo?: string;
+  expiryDate?: string;  
+  mrp?: boolean;
+  batchAmount?: boolean;
+  salePrice?: boolean;
+  packingQuantity?: number;
+  quantity?: number;
+  purchasePrice?: boolean;
+  tax?: boolean;
+  amount?: boolean;
+  // createdDateTime?: string;
 };
 
 export type DemoState = {
